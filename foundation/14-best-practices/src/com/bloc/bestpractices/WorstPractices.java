@@ -12,16 +12,16 @@ public class WorstPractices extends Object {
 	/************************************************/
 
 	public static void main(String [] args) {
-	
-		int MAGIC_NUMBER = WorstPractices.animals(false);
-		MAGIC_NUMBER *= 5;
-		
-		if (MAGIC_NUMBER > 18) {
-			while(MAGIC_NUMBER > 0) {
-				MAGIC_NUMBER--;
-			}
-		}
+	int MAGIC_NUMBER = WorstPractices.animals(false);
+	MAGIC_NUMBER *= 5;
+	if (MAGIC_NUMBER > 18) {
+	while(MAGIC_NUMBER > 0)
+	{
+	MAGIC_NUMBER--;
 	}
+	}
+	}
+
 // animals
 // this method takes in a single parameter, yeswellheresthething. Using a very elaborate and complex algorithm, it calculate a magic number
 // yeswellheresthething: a seed which helps generate the magic number
