@@ -1,6 +1,6 @@
 package com.bloc.objects;
 
-class Song extends Object {
+class Song {
 	// The ensemble which produced it
 	Ensemble mEnsemble;
 	// Title of the song
@@ -20,6 +20,12 @@ class Song extends Object {
 	 *	Create the first Song constructor
 	/************************************************/
 
+	Song() {
+		mEnsemble = new Ensemble(" ", new Artist[0]);
+		mTitle = " ";
+		mYearReleased = 0;
+	}
+	
 	/*
 	 * Song
 	 *
@@ -33,6 +39,11 @@ class Song extends Object {
 	 *	Create the second Song constructor
 	/************************************************/
 
+	Song(Ensemble ensemble, String title) {
+		mEnsemble = ensemble;
+		mTitle = title;
+	}
+	
 	/*
 	 * Song
 	 *
@@ -44,4 +55,11 @@ class Song extends Object {
 	 *	ASSIGNMENT:
 	 *	Create the third Song constructor
 	/************************************************/
+	
+	Song(Ensemble ensemble, String title, int yearReleased) {
+		mEnsemble = ensemble;
+		mTitle = title;
+		mYearReleased = yearReleased;
+	}
+	
 }
