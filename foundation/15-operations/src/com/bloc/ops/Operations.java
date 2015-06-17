@@ -10,7 +10,7 @@ public class Operations extends Object {
 	 	 *	Place 18 into x
 		/************************************************/
 
-		int x;	
+		int x = 18;
 
 		/************************************************
 		 *  ASSIGNMENT:
@@ -18,6 +18,7 @@ public class Operations extends Object {
 		/************************************************/
 
 		int y;
+		y = ++x;
 
 		/************************************************
 		 *	ASSIGNMENT:
@@ -25,20 +26,21 @@ public class Operations extends Object {
 		/************************************************/
 
 		int z;
+		z = x * y;
 
 		/************************************************
 		 *	ASSIGNMENT:
 		 *	Mod z by 17 and assign the result to remainder
 		/************************************************/
 
-		int remainder;
+		int remainder = z % 17;
 
 		/************************************************
 		 *	ASSIGNMENT:
 		 *	Assign 5 to floaty and then divide it by 3
 		/************************************************/
 
-		float floaty;
+		float floaty = 5f/3;
 
 		/************************************************
 		 *	ASSIGNMENT:
@@ -46,7 +48,8 @@ public class Operations extends Object {
 		 *	Then multiply dubs by itself
 		/************************************************/
 
-		double dubs;
+		double dubs = 5.3d;
+		dubs*=dubs;
 
 		/************************************************
 		 *	DO NOT MODIFY BELOW THIS CALLOUT
