@@ -14,6 +14,7 @@ abstract class Dog {
 	final static float MINIMUM_WEIGHT = 1f;
 	// Hair length reduced by this value
 	final static float HAIR_LENGTH_REDUCED_FROM_CUT = .2f;
+
 	// Hair length
 	float mHairLength;
 	// Gender, either "male" or "female"
