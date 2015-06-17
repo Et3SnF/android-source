@@ -1,9 +1,6 @@
 package com.bloc.classes;
 
 class Dog {
-	
-	// CONSTANTS
-	
     // The length of hair which
     final float HAIR_CUT_LENGTH = 0.15f;
     // Minimum weight that any Dog can be
@@ -12,33 +9,23 @@ class Dog {
 	final float WEIGHT_GAIN = 0.25f;
 	// Amount of weight to lose after playing
 	final float WEIGHT_LOSS = 0.2f;
-	
-	// Other member variables
-	
 	// Hair length
 	float mHairLength;
-	
 	// Gender, either "male" or "female"
 	String mGender;
-	
 	// Size, either "tiny", "small", "average", or "large"
 	String mSize;
-	
 	// Its age
 	int mAge;
-	
 	// Its weight in pounds
 	float mWeight;
-	
 	// The color of its coat
 	String mColor;
 
 	/************************************************
 	 * ADD MEMBER VARIABLES HERE IF NECESSARY	
 	/************************************************/
-	
-	int mTimesFed = 0;
-	int mPlayTimes = 0;
+
 
 	/*
 	 * getHairLength
@@ -50,10 +37,6 @@ class Dog {
  	 *	Create the getHairLength method
 	/************************************************/
 
-	float getHairLength() {
-		return mHairLength;
-	}
-	
 	/*
 	 * setHairLength
 	 *
@@ -67,10 +50,6 @@ class Dog {
  	 *	Create the setHairLength method
 	/************************************************/
 
-	void setHairLength(float hairLength) {
-		mHairLength = hairLength;
-	}
-	
 	/*
 	 * getGender
 	 *
@@ -82,10 +61,6 @@ class Dog {
  	 *	Create the getGender method
 	/************************************************/
 
-	String getGender() {
-		return mGender;
-	}
-	
 	/*
 	 * setGender
 	 *
@@ -99,10 +74,6 @@ class Dog {
  	 *	Create the setGender method
 	/************************************************/
 
-	void setGender(String gender) {
-		mGender = gender;
-	}
-	
 	/*
 	 * getSize
 	 *
@@ -113,10 +84,6 @@ class Dog {
  	 *	Create the getSize method
 	/************************************************/
 
-	String getSize() {
-		return mSize;
-	}
-	
 	/*
 	 * setSize
 	 *
@@ -130,10 +97,6 @@ class Dog {
  	 *	Create the setSize method
 	/************************************************/
 
-	void setSize(String size) {
-		mSize = size;
-	}
-	
 	/*
 	 * getAge
 	 *
@@ -144,10 +107,6 @@ class Dog {
  	 *	Create the getAge method
 	/************************************************/
 
-	int getAge() {
-		return mAge;
-	}
-	
 	/*
 	 * setAge
 	 *
@@ -161,10 +120,6 @@ class Dog {
  	 *	Create the setAge method
 	/************************************************/
 
-	void setAge(int age) {
-		mAge = age;
-	}
-	
 	/*
 	 * getWeight
 	 *
@@ -175,10 +130,6 @@ class Dog {
  	 *	Create the getWeight method
 	/************************************************/
 
-	float getWeight() {
-		return mWeight;
-	}
-	
 	/*
 	 * setWeight
 	 *
@@ -192,10 +143,6 @@ class Dog {
  	 *	Create the setWeight method
 	/************************************************/
 
-	void setWeight(float weight) {
-		mWeight = weight;
-	}
-	
 	/*
 	 * getColor
 	 *
@@ -206,10 +153,6 @@ class Dog {
  	 *	Create the getColor method
 	/************************************************/
 
-	String getColor() {
-		return mColor;
-	}
-	
 	/*
 	 * setColor
 	 *
@@ -223,10 +166,6 @@ class Dog {
  	 *	Create the setColor method
 	/************************************************/
 
-	void setColor(String color) {
-		mColor = color;
-	}
-	
 	/*
 	 * feed
 	 *
@@ -241,32 +180,11 @@ class Dog {
 	 *				   "tiny"
 	 * @return nothing
 	 */
-	
 	/************************************************
  	 *	ASSIGNMENT:
  	 *	Create the feed method
 	/************************************************/
 
-	void feed() {
-		
-		mTimesFed++;
-		mWeight += WEIGHT_GAIN;
-		
-		if(mTimesFed % 3 == 0) {
-						
-			if(mSize.equals("tiny")) {
-				mSize = "small";
-			}
-			else if(mSize.equals("small")) {
-				mSize = "average";
-			}
-			else if(mSize.equals("average")){
-				mSize = "large";
-			}
-		}
-			
-	}
-	
 	/*
 	 * play
 	 *
@@ -285,31 +203,6 @@ class Dog {
  	 *	Create the play method
 	/************************************************/
 
-	void play() {
-		
-		mPlayTimes++;
-		mWeight -= WEIGHT_LOSS;
-		
-		if(mPlayTimes % 6 == 0) {
-			
-			if(mSize.equals("large")) {
-				mSize = "average";
-			}
-			else if(mSize.equals("average")) {
-				mSize = "small";
-			}
-			else if(mSize.equals("small")){
-				mSize = "tiny";
-			}
-		}
-		
-		if (mWeight <= MIN_WEIGHT) {
-			mPlayTimes--;
-			mWeight += WEIGHT_LOSS;
-			System.out.println("Your dog cannot go below this weight of " + MIN_WEIGHT + "pounds!");
-		}
-	}
-	
 	/*
 	 * cutHair
 	 *
@@ -324,15 +217,5 @@ class Dog {
  	 *	ASSIGNMENT:
  	 *	Create the cutHair method
 	/************************************************/
-	
-	void cutHair() {
-		
-		mHairLength -= HAIR_CUT_LENGTH;
-		
-		if(mHairLength < 0) {
-			mHairLength = 0;
-			System.out.println("Hair Length cannot be less than 0!");
-		}
-		
-	}
+
 }
