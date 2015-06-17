@@ -19,7 +19,6 @@ public class Methods extends Object {
 	 *	DO NOT MODIFY ABOVE THIS BLOCK
 	/************************************************/
 
-
 	/*
 	 * giveMeTheOpposite
 	 * 
@@ -31,13 +30,16 @@ public class Methods extends Object {
 	 * @param original Is the boolean variable which must be flipped
 	 * @return the logical opposite of the original
 	 */
+	
 	public boolean giveMeTheOpposite(boolean original) {
 		/************************************************
 		 * Your work goes here
 		 ************************************************/
 
-		// You are free to modify the return statement
-		return false;
+		 original = !original;
+		 
+		 return original;
+		 
 	}
 
 	/*
@@ -56,12 +58,18 @@ public class Methods extends Object {
 	 * 		  sign must be flipped
 	 * @return nothing
 	 */
+	
 	public void flipTheSign(int[] numbers) {
+		
 		/************************************************
 		 * Your work goes here
 		 ************************************************/
+	
+		for(int i = 0; i < numbers.length; i++) {
+			numbers[i] *= -1;
+		}
+	
 	}
-
 
 	/*
 	 * boolsRule
@@ -86,13 +94,27 @@ public class Methods extends Object {
 	 * @param someNumbers The array of integers
 	 * @return an array of booleans
 	 */
+	
 	public boolean[] boolsRule(int floor, int[] someNumbers) {
+		
 		/************************************************
 		 * Your work goes here
 		 ************************************************/
 
-		// You are free to modify the return statement
-		return new boolean [0];
+		boolean[] boolArray = new boolean[someNumbers.length];
+		
+		for(int i = 0; i < someNumbers.length; i++) {
+			
+			if (someNumbers[i] > floor) {
+				boolArray[i] = true;
+			}
+			else {
+				boolArray[i] = false;
+			}
+		}
+		
+		return boolArray;
+		
 	}
 
 	/*
@@ -113,13 +135,35 @@ public class Methods extends Object {
 	 *		  must be recovered
 	 * @return an array of length 2: {min, max}
 	 */
+	
 	public int[] getMinAndMax(int[] someNumbers) {
+		
 		/************************************************
 		 * Your work goes here
 		 ************************************************/
 
-		// You are free to modify the return statement
-		return new int[2];
+		// Used the bubble sort and then stores the head and tail array values into an array
+		
+		for(int i = 0; i < someNumbers.length-1; i++) {
+			
+			for(int j = 0; j < someNumbers.length-1-i; j++) {
+				
+				if(someNumbers[j] > someNumbers[j+1]) {
+					int temp = someNumbers[j];
+					someNumbers[j] = someNumbers[j+1];
+					someNumbers[j+1] = temp;
+				}
+				
+			}
+			
+		}
+		
+		int[] getMinAndMaxVal = new int[2];
+		
+		getMinAndMaxVal[0] = someNumbers[0];
+		getMinAndMaxVal[1] = someNumbers[someNumbers.length-1];
+		
+		return getMinAndMaxVal;
 	}
 
 
