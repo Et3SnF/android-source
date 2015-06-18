@@ -11,8 +11,8 @@ public class Main extends Object {
 	public static void main(String [] args) {
 
 		Toaster toaster = new Toaster();
-		Refrigerator frige = new Refrigerator();
-		Oven oven = new Oven();
+		Refrigerator frige = new Refrigerator(); // <-- Fridge is spelled wrong :-P
+		//Oven oven = new Oven();
 
 		toaster.plugIn();
 		toaster.flipPowerSwitch();
