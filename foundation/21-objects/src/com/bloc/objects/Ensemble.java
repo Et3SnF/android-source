@@ -47,11 +47,7 @@ class Ensemble {
 		mName = name;
 		
 		mArtists = artists;
-		
-		for(int i = 0; i < artists.length; i++) {
-			mArtists[i] = artists[i];
-		}
-		
+
 		if (name == null) {
 			name = artists[0].mFirstName + " " + artists[0].mLastName;
 		}
