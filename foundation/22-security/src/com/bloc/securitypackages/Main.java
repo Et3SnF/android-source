@@ -1,11 +1,13 @@
 package com.bloc.securitypackages;
 
+import com.bloc.securitypackages.citrus.*;
+import com.bloc.securitypackages.apples.*;
+import com.bloc.securitypackages.colors.*;
+
 /************************************************
  *	ASSIGNMENT:
- *	Import the appopriate classes/packages below
+ *	Import the appropriate classes/packages below
 /************************************************/
-
-// e.g. import com.bloc.{your_package};
 
 /************************************************
  *	DO NOT MODIFY BELOW THIS BLOCK
@@ -17,7 +19,7 @@ public class Main extends Object {
 		Fruit[] fruits = new Fruit[4];
 		fruits[0] = new Macintosh();
 		fruits[1] = new Green();
-		fruits[2] = new Orange();
+		fruits[2] = new Orangefruit();
 		fruits[3] = new Grapefruit();
 
 		Color[] colors = new Color[5];
@@ -26,7 +28,6 @@ public class Main extends Object {
 		colors[2] = fruits[2].getColor();
 		colors[3] = fruits[3].getColor();
 		colors[4] = new Orange();
-
 		
 		System.out.println("/************************/");
 		System.out.println("/*                      */");
