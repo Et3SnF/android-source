@@ -1,4 +1,3 @@
-
 package com.bloc.syntax;
 
 public class SyntaxDisaster extends Object {
