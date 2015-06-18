@@ -5,7 +5,13 @@ package com.bloc.interfaces.people.hobbies;
  *	Define the interface methods as commented below
 /************************************************/
 
+/* Methods in an interface do not have a body
+ * When a class implements them, that is where
+ * they are defined
+ */
+
 public interface Driver {
+	
 	/*
 	 * getInCar
 	 *
@@ -13,6 +19,8 @@ public interface Driver {
 	 *
 	 * @return nothing
 	 */
+	
+	public void getInCar();
 
 	/*
 	 * startEngine
@@ -22,6 +30,8 @@ public interface Driver {
 	 * @return nothing
 	 */
 
+	public void startEngine();
+	
 	/*
 	 * driveFast
 	 *
@@ -29,4 +39,7 @@ public interface Driver {
 	 *
 	 * @return nothing
 	 */
+	
+	public void driveFast();
+	
 }
