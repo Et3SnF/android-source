@@ -1,6 +1,6 @@
 package com.bloc.objects;
 
-class Ensemble extends Object {
+class Ensemble {
 	// Name
 	String mName;
 
@@ -21,6 +21,11 @@ class Ensemble extends Object {
 	 *	Create the first Ensemble constructor
 	/************************************************/
 
+	Ensemble(Artist[] artists) {
+		this(artists[0].mFirstName + " " + artists[0].mLastName, artists);
+		mArtists = artists;
+	}
+	
 	/*
 	 * Ensemble
 	 *
@@ -36,4 +41,21 @@ class Ensemble extends Object {
 	 *	ASSIGNMENT:
 	 *	Create the second Ensemble constructor
 	/************************************************/
+	
+	Ensemble(String name, Artist[] artists) {
+		
+		mName = name;
+		
+		mArtists = artists;
+		
+		for(int i = 0; i < artists.length; i++) {
+			mArtists[i] = artists[i];
+		}
+		
+		if (name == null) {
+			name = artists[0].mFirstName + " " + artists[0].mLastName;
+		}
+		
+	}
+	
 }
