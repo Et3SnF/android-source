@@ -25,11 +25,16 @@ public class FavoritePastries {
 	 *	between rating and pastry: HashMap<Integer, List<Pastry>>
 	/************************************************/
 
-
+	private HashMap<Integer, List<Pastry>> foodRateMap;
+	
 	public FavoritePastries() {
+		
 		/************************************************
  	 	 *	WORK HERE
 		/************************************************/
+		
+		foodRateMap = new HashMap<Integer, List<Pastry>>();
+		
 	}
 
 	/* 
@@ -48,9 +53,20 @@ public class FavoritePastries {
 	 * @return nothing
 	 */
 	public void addPastry(Pastry pastry, int rating) {
+		
 		/************************************************
  	 	 *	WORK HERE
 		/************************************************/
+		
+		List<Pastry> pastryList = new ArrayList<Pastry>();
+		
+		if(foodRateMap.get(rating) == null) {
+			pastryList.add(pastry);
+			foodRateMap.put(rating, pastryList);
+		}
+		
+		foodRateMap.get(rating).add(pastry);
+		
 	}
 
 	/* 
@@ -66,9 +82,16 @@ public class FavoritePastries {
 	 *		   false otherwise
 	 */
 	public boolean removePastry(Pastry pastry) {
+		
 		/************************************************
  	 	 *	WORK HERE, you must modify the return value
 		/************************************************/
+		
+		if(foodRateMap.values().contains(pastry)) {
+			foodRateMap.remove(pastry);
+			return true;
+		}
+		
 		return false;
 	}
 
@@ -87,10 +110,17 @@ public class FavoritePastries {
 	 *		   -1 if not found among FavoritePastries
 	 */
 	public int getRatingForPastry(Pastry pastry) {
+		
 		/************************************************
  	 	 *	WORK HERE, you must modify the return value
 		/************************************************/
+			
+		if(foodRateMap.values().contains(pastry)) {
+			return (int)foodRateMap.keySet().toArray()[0];
+		}
+		
 		return -1;
+		
 	}
 
 	/* 
@@ -110,10 +140,19 @@ public class FavoritePastries {
 	 *         found
 	 */
 	public Collection<Pastry> getPastriesForRating(int rating) {
+		
 		/************************************************
  	 	 *	WORK HERE, you must modify the return value
 		/************************************************/
+		
+		for(Integer keys : foodRateMap.keySet()) {
+			if(foodRateMap.containsKey(keys)) {
+				return foodRateMap.get(keys);
+			}
+		}
+		
 		return null;
+		
 	}
 
 }
