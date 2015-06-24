@@ -1,5 +1,7 @@
 package com.bloc.singletons;
 
+import java.util.HashSet;
+
 /************************************************
  *	ASSIGNMENT:
  *	Populate this class with the defined methods.
@@ -19,6 +21,18 @@ public class Speakerphone extends Object {
 	 *	Implement the get method
 	/************************************************/
 
+	private static Speakerphone sSpeakerphone;
+	
+	public static Speakerphone get() {
+		
+		if(sSpeakerphone == null) {
+			sSpeakerphone = new Speakerphone();
+		}
+		
+		return sSpeakerphone;
+		
+	}
+	
 	/*
 	 * addListener
 	 *
@@ -32,6 +46,12 @@ public class Speakerphone extends Object {
 	 *	Implement the addListener method
 	/************************************************/
 
+	private HashSet<Listener> mListeners = new HashSet<Listener>();
+	
+	public void addListener(Listener listener) {
+		mListeners.add(listener);
+	}
+	
 	/*
 	 * removeListener
 	 *
@@ -45,6 +65,10 @@ public class Speakerphone extends Object {
 	 *	Implement the removeListener method
 	/************************************************/
 
+	public void removeListener(Listener listener) {
+		mListeners.remove(listener);
+	}
+	
 	/*
 	 * removeAll
 	 *
@@ -57,6 +81,10 @@ public class Speakerphone extends Object {
 	 *	Implement the removeAll method
 	/************************************************/
 
+	public void removeAll() {
+		mListeners.clear();
+	}
+	
 	/*
 	 * contains
 	 *
@@ -72,6 +100,16 @@ public class Speakerphone extends Object {
 	 *	Implement the contains method
 	/************************************************/	
 
+	public boolean contains(Listener listener) {
+		
+		if(mListeners.contains(listener)) {
+			return true;
+		}
+		
+		return false;
+		
+	}
+	
 	/*
 	 * shoutMessage
 	 *
@@ -85,6 +123,10 @@ public class Speakerphone extends Object {
 	 *	Implement the shoutMessage method
 	/************************************************/
 
+	public void shoutMessage(Talker talker) {
+		talker.getMessage();
+	}
+	
 	/*
 	 * shoutMessage
 	 *
@@ -103,5 +145,9 @@ public class Speakerphone extends Object {
 	 *	ASSIGNMENT:
 	 *	Implement the shoutMessage method
 	/************************************************/
+	
+	public void shoutMessage(Talker talker, Class<Listener> cls) {
+		
+	}
 
 }
