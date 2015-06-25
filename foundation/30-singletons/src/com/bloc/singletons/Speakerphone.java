@@ -1,6 +1,7 @@
 package com.bloc.singletons;
 
 import java.util.HashSet;
+import java.util.Iterator;
 
 /************************************************
  *	ASSIGNMENT:
@@ -46,7 +47,11 @@ public class Speakerphone extends Object {
 	 *	Implement the addListener method
 	/************************************************/
 
-	private HashSet<Listener> mListeners = new HashSet<Listener>();
+	private HashSet<Listener> mListeners;
+	
+	private Speakerphone() {
+		mListeners = new HashSet<Listener>();
+	}
 	
 	public void addListener(Listener listener) {
 		mListeners.add(listener);
@@ -124,7 +129,12 @@ public class Speakerphone extends Object {
 	/************************************************/
 
 	public void shoutMessage(Talker talker) {
-		talker.getMessage();
+		Iterator<Listener> listIterator  = mListeners.iterator();
+		
+		while(listIterator.hasNext()) {
+			listIterator.next();
+			talker.getMessage();
+		}
 	}
 	
 	/*
@@ -146,7 +156,11 @@ public class Speakerphone extends Object {
 	 *	Implement the shoutMessage method
 	/************************************************/
 	
-	public void shoutMessage(Talker talker, Class<Listener> cls) {
+	public void shoutMessage(Talker talker, Class<?> cls) {
+		
+		while(cls.isAssignableFrom(talker.getClass())) {
+			talker.getMessage();
+		}
 		
 	}
 
