@@ -24,7 +24,7 @@ public class Speakerphone extends Object {
 
 	private static Speakerphone sSpeakerphone;
 	
-	public static Speakerphone get() {
+	public static Speakerphone getInstance() {
 		
 		if(sSpeakerphone == null) {
 			sSpeakerphone = new Speakerphone();
